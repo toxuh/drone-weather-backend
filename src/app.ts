@@ -26,7 +26,7 @@ connect(
 
 app.listen(settings.appSettings.port, () => {
   console.log(
-    `App is running on ${settings.appSettings.host}:%d`,
+    `App is running now on ${settings.appSettings.host}:%d`,
     settings.appSettings.port,
   );
 });
