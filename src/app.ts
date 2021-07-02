@@ -1,18 +1,16 @@
 import * as express from 'express';
-import { connect, Error } from 'mongoose';
+import { Error, connect } from 'mongoose';
 import { json } from 'body-parser';
 
 import settings from './config';
 
-import taskRouter from './api/tasks';
-import userRouter from './api/users';
+import weatherRouter from './api/weather';
 
 const app = express();
 
 app.use(json());
 
-app.use('/tasks', taskRouter);
-app.use('/user', userRouter);
+app.use('/weather', weatherRouter);
 
 connect(
   settings.dbSettings,
