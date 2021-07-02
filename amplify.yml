@@ -7,6 +7,9 @@ frontend:
     build:
       commands:
         - yarn run build
+    run:
+      commands:
+        - yarn watch
   artifacts:
     # IMPORTANT - Please verify your build output directory
     baseDirectory: dist
