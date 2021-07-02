@@ -17,4 +17,4 @@ COPY . .
 
 EXPOSE 8080
 RUN npm run build
-RUN npm run watch-node
+CMD [ "node", "dist/app.js" ]
