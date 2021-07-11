@@ -27,12 +27,12 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
-            rm -rf ~/drone
-            mkdir -p ~/drone/
+            sudo rm -rf ~/drone
+            sudo mkdir -p ~/drone/
             cd ~/drone/
             git clone https://github.com/toxuh/drone-weather-backend.git
             cd drone-weather-backend
-            touch .env
+            sudo touch .env
             echo APP_HOST=${{ secrets.APP_HOST }} >> .env
             echo APP_PORT=${{ secrets.APP_PORT }} >> .env
             echo DB_USER=${{ secrets.DB_USER }} >> .env
