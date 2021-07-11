@@ -39,6 +39,6 @@ jobs:
             sudo echo DB_PASSWORD =${{ secrets.DB_PASSWORD }} >> .env
             sudo echo DB_COLLECTION =${{ secrets.DB_COLLECTION }} >> .env
             sudo npm install
-            npm run build
+            sudo npm run build
             sudo pm2 delete node-test
             sudo pm2 start dist/app.js --name node-test
