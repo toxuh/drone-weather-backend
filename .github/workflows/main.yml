@@ -27,7 +27,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            sudo rm -rf ~/drone
-            sudo mkdir -p ~/drone/
+            rm -rf ~/drone
+            mkdir -p ~/drone/
             cd ~/drone/
             git clone https://github.com/toxuh/drone-weather-backend.git
