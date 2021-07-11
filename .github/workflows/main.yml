@@ -30,7 +30,7 @@ jobs:
             rm -rf ~/drone
             mkdir -p ~/drone/
             cd ~/drone/
-            git clone https://github.com/toxuh/drone-weather-backend.git
+            sudo git clone https://github.com/toxuh/drone-weather-backend.git
             cd drone-weather-backend
             sudo touch .env
             sudo echo APP_HOST=${{ secrets.APP_HOST }} >> .env
