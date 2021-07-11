@@ -27,11 +27,11 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
-            rm -rf /var/www/drone-b
-            mkdir -p /var/www/drone-b/
-            cd /var/www/drone-b
-            git clone https://github.com/toxuh/ts-back-temp.git
-            cd ts-back-temp
+            rm -rf ~/drone
+            mkdir -p ~/drone/
+            cd ~/drone/
+            git clone https://github.com/toxuh/drone-weather-backend.git
+            cd drone-weather-backend
             touch .env
             echo APP_HOST=${{ secrets.APP_HOST }} >> .env
             echo APP_PORT=${{ secrets.APP_PORT }} >> .env
