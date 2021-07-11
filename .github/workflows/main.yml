@@ -28,17 +28,17 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             sudo rm -rf ~/drone
-            sudo mkdir -p ~/drone/
+            mkdir -p ~/drone/
             cd ~/drone/
-            sudo git clone https://github.com/toxuh/drone-weather-backend.git
+            git clone https://github.com/toxuh/drone-weather-backend.git
             cd drone-weather-backend
-            sudo touch .env
-            sudo echo APP_HOST=${{ secrets.APP_HOST }} >> .env
-            sudo echo APP_PORT=${{ secrets.APP_PORT }} >> .env
-            sudo echo DB_USER=${{ secrets.DB_USER }} >> .env
-            sudo echo DB_PASSWORD =${{ secrets.DB_PASSWORD }} >> .env
-            sudo echo DB_COLLECTION =${{ secrets.DB_COLLECTION }} >> .env
-            sudo npm install
-            sudo npm run build
-            sudo pm2 delete node-test
-            sudo pm2 start dist/app.js --name node-test
+            touch .env
+            echo APP_HOST=${{ secrets.APP_HOST }} >> .env
+            echo APP_PORT=${{ secrets.APP_PORT }} >> .env
+            echo DB_USER=${{ secrets.DB_USER }} >> .env
+            echo DB_PASSWORD =${{ secrets.DB_PASSWORD }} >> .env
+            echo DB_COLLECTION =${{ secrets.DB_COLLECTION }} >> .env
+            npm install
+            npm run build
+            pm2 delete node-test
+            pm2 start dist/app.js --name node-test
