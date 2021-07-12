@@ -38,6 +38,7 @@ jobs:
             echo DB_USER=${{ secrets.DB_USER }} >> .env
             echo DB_PASSWORD =${{ secrets.DB_PASSWORD }} >> .env
             echo DB_COLLECTION =${{ secrets.DB_COLLECTION }} >> .env
+            echo OWM_APP_ID =${{ secrets.OWM_APP_ID }} >> .env
             npm install
             npm run build
             pm2 delete node-test

@@ -11,7 +11,7 @@ export const getAllCurrentWeather = async (
       params: {
         lat: '51',
         lon: '47',
-        appid: '8917583788877352d35cec38d1cf6388',
+        appid: process.env.OWM_APP_ID,
         units: 'metric',
       },
     })
